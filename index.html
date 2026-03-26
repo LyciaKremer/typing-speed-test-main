@@ -8,8 +8,9 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./assets/images/favicon-32x32.png"
+      href="./assets/images/logo-small.svg"
     />
+    <title>Typing Speed Test | Frontend Mentor</title>
     <meta
       name="description"
       content="Typing Speed Test challenge on Frontend Mentor"
@@ -23,38 +24,197 @@
       href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
       rel="stylesheet"
     />
-
-    <title>Frontend Mentor | Typing Speed Test</title>
   </head>
   <body>
-    <main>
-      Personal best:
-      <!-- PB -->
-      WPM WPM:
-      <!-- WPM -->
-      Accuracy:
-      <!-- Accuracy -->
-      Time:
-      <!-- Time -->
+    <header>
+      <img
+        class="mobile"
+        src="./assets/images/logo-small.svg"
+        alt="Typing Speed Test Logo"
+      />
+      <img src="./assets/images/logo-large.svg" alt="Typing Speed Test Logo" />
+      <div class="best-score">
+        <img
+          src="./assets/images/icon-personal-best.svg"
+          alt="Typing Speed Test Logo"
+        />
+        <p>Personal best:</p>
+        <span class="score">92WPM</span>
+      </div>
+    </header>
+    <main class="container">
+      <div class="score-actions">
+        <div class="states">
+          <p>WPM:</p>
+          <span>40</span>
+        </div>
+        <span class="divisor"></span>
+        <div>
+          <p>Accuracy:</p>
+          <span>94%</span>
+        </div>
+        <span class="divisor"></span>
+        <div>
+          <p>Time:</p>
+          <span>0:46</span>
+        </div>
+        <div class="actions">
+          <div class="dropdown difficulty">
+            <button class="dropdown-button">
+              <img src="./assets/images/icon-down-arrow.svg" alt="arrow" />
+            </button>
+            <fieldset class="dropdown-content">
+              <legend class="">Difficulty:</legend>
 
-      Difficulty: Easy Medium Hard Mode: Timed (60s) Passage
+              <input type="radio" id="easy" name="difficulty" value="easy" />
+              <label for="easy">Easy</label>
+              <input
+                type="radio"
+                id="medium"
+                name="difficulty"
+                value="medium"
+              />
+              <label for="medium">Medium</label>
+              <input type="radio" id="hard" name="difficulty" value="hard" />
+              <label for="hard">Hard</label>
+            </fieldset>
+          </div>
+          <span class="divisor mobile"></span>
+          <div class="dropdown mode">
+            <button class="dropdown-button">
+              <img src="./assets/images/icon-down-arrow.svg" alt="arrow" />
+            </button>
+            <fieldset class="dropdown-content">
+              <legend class="">Mode:</legend>
 
-      <!-- Passage -->
+              <input type="radio" id="timed" name="mode" value="timed" />
+              <label for="timed">Timed (60s)</label>
+              <input type="radio" id="passage" name="mode" value="passage" />
+              <label for="passage">Passage</label>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+      <div class="text-test">
+        <p>
+          The archaeological expedition unearthed artifacts that complicated
+          prevailing theories about Bronze Age trade networks. Obsidian from
+          Anatolia, lapis lazuli from Afghanistan, and amber from the Baltic—all
+          discovered in a single Mycenaean tomb—suggested commercial connections
+          far more extensive than previously hypothesized. "We've underestimated
+          ancient peoples' navigational capabilities and their appetite for
+          luxury goods," the lead researcher observed. "Globalization isn't as
+          modern as we assume."
+        </p>
+        <button>
+          Restart Test
+          <img src="./assets/images/icon-restart.svg" alt="Restart Icon" />
+        </button>
+      </div>
 
-      Start Typing Test Or click the text and start typing
+      <!-- Not started -->
+      <div class="blur-bg-not-started">
+        <button>Start Typing Test</button>
+        Or click the text and start typing
+      </div>
 
-      <!-- Test Complete Start -->
+      <!-- Test complete results -->
+      <div class="test-complete">
+        <img src="./assets/images/pattern-star-2.svg" alt="" />
 
-      Test Complete! Solid run. Keep pushing to beat your high score. WPM:
-      <!-- WPM -->
-      Accuracy:
-      <!-- Accuracy -->
-      Characters:
-      <!-- Correct/Incorrect -->
+        <img
+          class="green-border"
+          src="./assets/images/icon-completed.svg"
+          alt="Test Complete"
+        />
+        <h2>Test Complete!</h2>
+        <p class="description">
+          Solid run. Keep pushing to beat your high score.
+        </p>
+        <div class="states-container">
+          <div class="state-block">
+            <p>WPM:</p>
+            <span>85</span>
+          </div>
+          <div class="state-block">
+            <p>Accuracy:</p>
+            <span>90%</span>
+          </div>
+          <div class="state-block">
+            <p>Characters:</p>
+            <span class="characters-correct">120</span>
+            <span class="slash">/</span>
+            <span class="characters-incorrect">5</span>
+          </div>
+        </div>
+        <img src="./assets/images/pattern-star-1.svg" alt="" />
 
-      Go Again
+        <button>
+          Go Again <img src="assets/images/icon-restart.svg" alt="Restart" />
+        </button>
+      </div>
 
-      <!-- Test Complete End -->
+      <!-- Desktop results new personal best -->
+      <div class="test-high-score">
+        <img src="./assets/images/icon-new-pb.svg" alt="New High Score!" />
+        <h2>High Score Smashed!</h2>
+        <p class="description">
+          You're getting faster. That was incredible typing!
+        </p>
+        <div class="states-container">
+          <div class="state-block">
+            <p>WPM:</p>
+            <span>95</span>
+          </div>
+          <div class="state-block">
+            <p>Accuracy:</p>
+            <span>100%</span>
+          </div>
+          <div class="state-block">
+            <p>Characters:</p>
+            <span class="characters-correct">120</span>
+            <span class="slash">/</span>
+            <span class="characters-incorrect">5</span>
+          </div>
+        </div>
+
+        <button>
+          Best This Score
+          <img src="assets/images/icon-restart.svg" alt="Restart" />
+        </button>
+
+        <img src="./assets/images/pattern-confetti.svg" alt="confetti" />
+      </div>
+
+      <!-- Desktop results first test -->
+      <div class="test-baseline">
+        <img src="./assets/images/icon-completed.svg" alt="New High Score!" />
+        <h2>Baseline Established!</h2>
+        <p class="description">
+          You've set the bar. Now the real challenge begins—time to beat it!
+        </p>
+        <div class="states-container">
+          <div class="state-block">
+            <p>WPM:</p>
+            <span>85</span>
+          </div>
+          <div class="state-block">
+            <p>Accuracy:</p>
+            <span>90%</span>
+          </div>
+          <div class="state-block">
+            <p>Characters:</p>
+            <span class="characters-correct">120</span>
+            <span class="slash">/</span>
+            <span class="characters-incorrect">5</span>
+          </div>
+        </div>
+
+        <button>
+          Beat This Score
+          <img src="assets/images/icon-restart.svg" alt="Restart" />
+        </button>
+      </div>
     </main>
   </body>
 </html>

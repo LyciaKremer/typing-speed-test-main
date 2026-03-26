@@ -1,6 +1,6 @@
 # Frontend Mentor - Typing Speed Test solution
 
-This is a solution to the [Typing Speed Test challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/typing-speed-test). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Typing Speed Test challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/typing-speed-test). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -23,15 +23,17 @@ The challenge is to develop this typing speed test application and make it as si
 The developer can use any tool they want to help them complete the challenge. We store the passage data in a local `data.json` file. The developer can use it to randomly select passages of different difficulty levels.
 
 Users should be able to:
+
 - View the ideal interface layout depending on the device screen size
 - See the focus and mouse hover states over all interactive elements on the page
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./preview.jpg)
 
 ### Links
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+
+- Live Site URL: [Typing Speed Test solution](https://typing-speed-test-fm.vercel.app/)
 
 ## My process
 
@@ -64,4 +66,3 @@ Describe how you used AI tools (if any) during this project. This helps demonstr
 - Website - [Lycia Kremer](https://portfolio-lycia-kremer.vercel.app/)
 - Frontend Mentor - [@LyciaKremer](https://www.frontendmentor.io/profile/LyciaKremer)
 - Instagram - [@lyciakremer](https://www.instagram.com/lycia.kremer/)
-
