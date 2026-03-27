@@ -32,7 +32,11 @@
         src="./assets/images/logo-small.svg"
         alt="Typing Speed Test Logo"
       />
-      <img class="desktop" src="./assets/images/logo-large.svg" alt="Typing Speed Test Logo" />
+      <img
+        class="desktop"
+        src="./assets/images/logo-large.svg"
+        alt="Typing Speed Test Logo"
+      />
       <div class="best-score">
         <img
           src="./assets/images/icon-personal-best.svg"
@@ -61,12 +65,19 @@
         <div class="actions">
           <div class="dropdown difficulty">
             <button class="dropdown-button mobile">
+              <span class="selected-value"></span>
               <img src="./assets/images/icon-down-arrow.svg" alt="arrow" />
             </button>
             <fieldset class="dropdown-content">
               <legend class="">Difficulty:</legend>
 
-              <input type="radio" id="easy" name="difficulty" value="easy" />
+              <input
+                type="radio"
+                id="easy"
+                name="difficulty"
+                value="easy"
+                checked
+              />
               <label for="easy">Easy</label>
               <input
                 type="radio"
@@ -82,12 +93,19 @@
           <span class="divisor mobile"></span>
           <div class="dropdown mode">
             <button class="dropdown-button mobile">
+              <span class="selected-value"></span>
               <img src="./assets/images/icon-down-arrow.svg" alt="arrow" />
             </button>
             <fieldset class="dropdown-content">
               <legend class="">Mode:</legend>
 
-              <input type="radio" id="timed" name="mode" value="timed" />
+              <input
+                type="radio"
+                id="timed"
+                name="mode"
+                value="timed"
+                checked
+              />
               <label for="timed">Timed (60s)</label>
               <input type="radio" id="passage" name="mode" value="passage" />
               <label for="passage">Passage</label>
