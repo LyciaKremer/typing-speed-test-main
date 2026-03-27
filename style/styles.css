@@ -16,6 +16,7 @@
 body {
   font-family: "Sora", sans-serif;
   background-color: var(--Neutral-900);
+  color: white;
 }
 
 label {
