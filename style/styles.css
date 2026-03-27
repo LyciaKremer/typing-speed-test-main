@@ -23,12 +23,31 @@ label {
 }
 
 .dropdown-content {
+  display: flex;
+}
+
+.mobile {
   display: none;
 }
 
-.open {
-  display: block;
+.desktop {
+  display: flex;
 }
 
 @media screen and (max-width: 375px) {
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .dropdown-content {
+    display: none;
+  }
+
+  .dropdown-content.open {
+    display: flex;
+  }
 }
