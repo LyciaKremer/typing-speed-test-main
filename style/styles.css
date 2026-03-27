@@ -22,5 +22,13 @@ label {
   font-size: 1rem;
 }
 
+.dropdown-content {
+  display: none;
+}
+
+.open {
+  display: block;
+}
+
 @media screen and (max-width: 375px) {
 }
