@@ -35,6 +35,36 @@ label {
   display: flex;
 }
 
+.correct {
+  color: var(--Green-500);
+}
+
+.error {
+  color: var(--Red-500);
+  border-bottom: 2px solid var(--Red-500);
+}
+
+.current {
+  background-color: var(--Neutral-500);
+  color: var(--Neutral-400);
+  border-radius: 2px;
+  height: fit-content;
+}
+
+.test-complete,
+.test-high-score,
+.test-baseline {
+  display: none;
+}
+
+.visible {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
 @media screen and (max-width: 375px) {
   .mobile {
     display: block;
