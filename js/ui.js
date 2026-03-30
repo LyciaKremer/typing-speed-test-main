@@ -37,6 +37,11 @@ export function finishTest(startOverlay) {
 
   state.status = "finished";
 
+  const timeElement = document.querySelector("[data-time]");
+  if (timeElement) {
+    timeElement.classList.remove("is-running");
+  }
+
   const results = getResults();
   updateResultUI(results);
 

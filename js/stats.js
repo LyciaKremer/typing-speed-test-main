@@ -20,6 +20,19 @@ export function calculateAccuracy() {
 }
 
 export function updateStats(wpmEl, accEl) {
-  wpmEl.textContent = calculateWPM();
-  accEl.textContent = `${calculateAccuracy()}%`;
+  const wpm = calculateWPM();
+  const accuracy = calculateAccuracy();
+  const shouldHighlightAccuracy =
+    state.status !== "idle" && state.typed.length > 0;
+
+  wpmEl.textContent = wpm;
+  accEl.textContent = `${accuracy}%`;
+  accEl.classList.toggle(
+    "is-perfect",
+    shouldHighlightAccuracy && accuracy === 100,
+  );
+  accEl.classList.toggle(
+    "is-imperfect",
+    shouldHighlightAccuracy && accuracy < 100,
+  );
 }

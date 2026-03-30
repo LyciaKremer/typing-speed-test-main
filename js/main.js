@@ -2,7 +2,11 @@ import { state, updateState } from "./state.js";
 import { loadTexts, renderText } from "./text.js";
 import { handleTyping } from "./typing.js";
 import { updateStats } from "./stats.js";
-import { startTimer } from "./timer.js";
+import {
+  getInitialTimeDisplay,
+  startTimer,
+  updateTimeAppearance,
+} from "./timer.js";
 import { renderUI, showScreen, updateResultUI } from "./ui.js";
 import { loadBestScore } from "./storage.js";
 import { initDropdowns } from "./dropdown.js";
@@ -14,16 +18,27 @@ const textEl = document.querySelector(".text-test p");
 const overlay = document.querySelector(".blur-bg-not-started");
 const startButton = overlay.querySelector("button");
 const textContainer = document.querySelector(".text-test");
+const restartButton = textContainer.querySelector("button");
 
 await loadTexts();
 loadBestScore();
 renderText(textEl);
+renderIdleStats();
 startTimer(timeEl, overlay);
 renderUI(overlay);
 initDropdowns(
-  (key, value) => updateState(key, value, () => renderText(textEl)),
+  (key, value) => {
+    updateState(key, value, () => renderText(textEl));
+    renderIdleStats();
+  },
   () => renderUI(overlay),
 );
+
+function renderIdleStats() {
+  updateStats(wpmEl, accEl);
+  timeEl.textContent = getInitialTimeDisplay();
+  updateTimeAppearance(timeEl);
+}
 
 function startTest() {
   if (state.status === "running") return;
@@ -34,11 +49,16 @@ function startTest() {
   state.startTime = Date.now();
 
   updateStats(wpmEl, accEl);
+  updateTimeAppearance(timeEl);
   renderUI(overlay);
 }
 
 startButton.addEventListener("click", startTest);
 textContainer.addEventListener("click", startTest);
+restartButton.addEventListener("click", (e) => {
+  e.stopPropagation();
+  resetTest();
+});
 
 document.addEventListener("keydown", (e) => {
   handleTyping(e, updateVisual, wpmEl, accEl, overlay);
@@ -72,8 +92,7 @@ function resetTest() {
   state.screen = null;
 
   renderText(textEl);
-  updateStats(wpmEl, accEl);
-  timeEl.textContent = state.mode === "timed" ? "01:00" : "00:00";
+  renderIdleStats();
   renderUI(overlay);
 }
 
