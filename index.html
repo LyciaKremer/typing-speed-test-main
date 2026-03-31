@@ -120,24 +120,32 @@
             </div>
           </div>
         </div>
-        <div class="text-test">
-          <p></p>
-          <button>
-            Restart Test
-            <img src="./assets/images/icon-restart.svg" alt="Restart Icon" />
-          </button>
-        </div>
-      </section>
+        <div class="text-panel">
+          <!-- Not started -->
+          <section class="blur-bg-not-started">
+            <button>Start Typing Test</button>
+            <p>Or click the text and start typing</p>
+          </section>
 
-      <!-- Not started -->
-      <section class="blur-bg-not-started">
-        <button>Start Typing Test</button>
-        Or click the text and start typing
+          <div class="text-test">
+            <p></p>
+            <span class="divisor-text"></span>
+
+            <button class="button-dark">
+              Restart Test
+              <img src="./assets/images/icon-restart.svg" alt="Restart Icon" />
+            </button>
+          </div>
+        </div>
       </section>
 
       <!-- Test complete results -->
       <section class="test-complete">
-        <img src="./assets/images/pattern-star-2.svg" alt="" />
+        <img
+          class="result-decoration decoration-left"
+          src="./assets/images/pattern-star-2.svg"
+          alt=""
+        />
 
         <img
           class="green-border"
@@ -159,14 +167,20 @@
           </div>
           <div class="state-block">
             <p>Characters:</p>
-            <span class="characters-correct">120</span>
-            <span class="slash">/</span>
-            <span class="characters-incorrect">5</span>
+            <div class="characters-result">
+              <span class="characters-correct">120</span>
+              <span>/</span>
+              <span class="characters-incorrect">5</span>
+            </div>
           </div>
         </div>
-        <img src="./assets/images/pattern-star-1.svg" alt="" />
+        <img
+          class="result-decoration decoration-right"
+          src="./assets/images/pattern-star-1.svg"
+          alt=""
+        />
 
-        <button>
+        <button class="button-light">
           Go Again <img src="assets/images/icon-restart.svg" alt="Restart" />
         </button>
       </section>
@@ -189,23 +203,38 @@
           </div>
           <div class="state-block">
             <p>Characters:</p>
-            <span class="characters-correct">120</span>
-            <span class="slash">/</span>
-            <span class="characters-incorrect">5</span>
+            <div class="characters-result">
+              <span class="characters-correct">120</span>
+              <span class="slash">/</span>
+              <span class="characters-incorrect">5</span>
+            </div>
           </div>
         </div>
 
-        <button>
+        <button class="button-light">
           Best This Score
           <img src="assets/images/icon-restart.svg" alt="Restart" />
         </button>
 
-        <img src="./assets/images/pattern-confetti.svg" alt="confetti" />
+        <img
+          class="confetti-band"
+          src="./assets/images/pattern-confetti.svg"
+          alt="confetti"
+        />
       </section>
 
       <!-- Results first test -->
       <section class="test-baseline">
-        <img src="./assets/images/icon-completed.svg" alt="New High Score!" />
+        <img
+          class="result-decoration decoration-left"
+          src="./assets/images/pattern-star-2.svg"
+          alt=""
+        />
+        <img
+          class="green-border"
+          src="./assets/images/icon-completed.svg"
+          alt="New High Score!"
+        />
         <h2>Baseline Established!</h2>
         <p class="description">
           You've set the bar. Now the real challenge begins—time to beat it!
@@ -221,13 +250,21 @@
           </div>
           <div class="state-block">
             <p>Characters:</p>
-            <span class="characters-correct">120</span>
-            <span class="slash">/</span>
-            <span class="characters-incorrect">5</span>
+            <div class="characters-result">
+              <span class="characters-correct">120</span>
+              <span class="slash">/</span>
+              <span class="characters-incorrect">5</span>
+            </div>
           </div>
         </div>
 
-        <button>
+        <img
+          class="result-decoration decoration-right"
+          src="./assets/images/pattern-star-1.svg"
+          alt=""
+        />
+
+        <button class="button-light">
           Beat This Score
           <img src="assets/images/icon-restart.svg" alt="Restart" />
         </button>

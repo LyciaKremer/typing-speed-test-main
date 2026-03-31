@@ -17,6 +17,7 @@ const timeEl = document.querySelector("[data-time]");
 const textEl = document.querySelector(".text-test p");
 const overlay = document.querySelector(".blur-bg-not-started");
 const startButton = overlay.querySelector("button");
+const textPanel = document.querySelector(".text-panel");
 const textContainer = document.querySelector(".text-test");
 const restartButton = textContainer.querySelector("button");
 
@@ -54,7 +55,7 @@ function startTest() {
 }
 
 startButton.addEventListener("click", startTest);
-textContainer.addEventListener("click", startTest);
+textPanel.addEventListener("click", startTest);
 restartButton.addEventListener("click", (e) => {
   e.stopPropagation();
   resetTest();
@@ -65,7 +66,7 @@ document.addEventListener("keydown", (e) => {
 });
 
 function updateVisual() {
-  const spans = document.querySelectorAll(".text-test span");
+  const spans = document.querySelectorAll(".text-test p span");
 
   spans.forEach((span, index) => {
     span.classList.remove("correct", "error", "current");
@@ -81,6 +82,21 @@ function updateVisual() {
     }
 
     span.classList.add(typedChar === expectedChar ? "correct" : "error");
+  });
+
+  keepCurrentCharacterVisible(spans);
+}
+
+function keepCurrentCharacterVisible(spans) {
+  const currentSpan = spans[state.currentIndex];
+  const textParagraph = currentSpan?.parentElement;
+
+  if (!currentSpan || !textParagraph) return;
+  if (textParagraph.scrollHeight <= textParagraph.clientHeight) return;
+
+  currentSpan.scrollIntoView({
+    block: "center",
+    inline: "nearest",
   });
 }
 

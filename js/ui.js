@@ -3,9 +3,12 @@ import { calculateWPM, calculateAccuracy } from "./stats.js";
 import { saveBestScore } from "./storage.js";
 
 export function renderUI(startOverlay) {
+  const restartButton = document.querySelector(".button-dark");
+
   showScreen(null);
 
   startOverlay.classList.toggle("hidden", state.status !== "idle");
+  restartButton?.classList.toggle("hidden", state.status !== "running");
 
   if (state.status === "finished") {
     if (state.screen === "baseline") {
@@ -80,15 +83,19 @@ export function updateResultUI({ wpm, accuracy, correct, incorrect }) {
   );
 
   screens.forEach((screen) => {
-    screen
-      .querySelectorAll(".state-block")[0]
-      .querySelector("span").textContent = wpm;
-    screen
-      .querySelectorAll(".state-block")[1]
-      .querySelector("span").textContent = `${accuracy}%`;
-
+    const blocks = screen.querySelectorAll(".state-block");
+    const wpmEl = blocks[0]?.querySelector("span");
+    const accuracyEl = blocks[1]?.querySelector("span");
     const correctEl = screen.querySelector(".characters-correct");
     const incorrectEl = screen.querySelector(".characters-incorrect");
+
+    if (wpmEl) wpmEl.textContent = wpm;
+
+    if (accuracyEl) {
+      accuracyEl.textContent = `${accuracy}%`;
+      accuracyEl.classList.toggle("is-perfect", accuracy === 100);
+      accuracyEl.classList.toggle("is-imperfect", accuracy < 100);
+    }
 
     if (correctEl) correctEl.textContent = correct;
     if (incorrectEl) incorrectEl.textContent = incorrect;
